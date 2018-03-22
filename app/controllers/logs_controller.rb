@@ -1,7 +1,8 @@
 class LogsController < ApplicationController
    def index
     @logs = Log.all
-    render json: @logs
+    log_array = @logs.map{|log| prepare_log(log)}
+    render json: log_array
    end
 
    def show
@@ -21,7 +22,7 @@ class LogsController < ApplicationController
      if act
        @log.activities << act
     end
-    render json: @log
+    render json: prepare_log(@log)
    end
 
    def update
@@ -41,6 +42,17 @@ class LogsController < ApplicationController
 
    def log_params
      params.permit(:user_id, :date, :entry, :mood_id)
+   end
+
+   def prepare_log(log)
+     log_hash = {
+       id: log.id,
+       mood_id: log.mood_id,
+       date: log.date,
+       entry: log.entry,
+       user_id: log.user_id,
+       activities: log.activities
+     }
    end
 
 
