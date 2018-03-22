@@ -17,6 +17,10 @@ class LogsController < ApplicationController
 
    def create
     @log = Log.create(log_params)
+    act = params[:activities].map{ |act| Activity.find_by(id: act)}
+     if act
+       @log.activities << act
+    end
     render json: @log
    end
 
