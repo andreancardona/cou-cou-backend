@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: "Andrea", birthday: 19930319)
+User.create(name: "Andrea", birthday: 19930319, password: 'password')
 
 Mood.create(mood: 'on the verge of tears', url: "https://i.imgur.com/9jD56an.png" )
 Mood.create(mood: "I've had better", url: "https://i.imgur.com/2y5fxrA.png")
