@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user.save
     redirect_to user_path(@user)
    else
-    flash[:errors] = ["Please enter an entry for today"]
+    flash[:errors] = ["Please log your daily entry"]
     redirect_to user_new_path(user: @user)
    end
   end

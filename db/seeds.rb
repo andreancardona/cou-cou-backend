@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: "Andrea", birthday: 19930319, password: 'password')
+User.create(name: "Andrea", birthday: 19930319, password: 'andrea')
+User.create(name: "Meryl", birthday: 19950221, password: 'meryl')
+
 
 Mood.create(mood: 'on the verge of tears', url: "https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/118/loudly-crying-face_1f62d.png" )
 Mood.create(mood: "I've had better", url: "https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/118/disappointed-face_1f61e.png")

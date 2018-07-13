@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   patch '/logs/:log_id/add_activities', to: "logs#add_activities"
   get '/logs/:log_id/activities', to: "activity_logs#index"
   post "/login", to: 'auth#login'
-  post "/active_user", to: 'auth#active_user'
+  post "/fetch_current_user", to: 'auth#decode'
+  get '/users/:id/logs', to: "logs#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

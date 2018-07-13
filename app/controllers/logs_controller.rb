@@ -1,8 +1,11 @@
 class LogsController < ApplicationController
    def index
-    @logs = Log.all
+     @logs = Log.where({ user_id: params[:id]})
+     #filter through all logs whos user_id == to user
+    # @logs = Log.all
     log_array = @logs.map{|log| prepare_log(log)}
-    render json: log_array
+    # render json: log_array
+     render json: log_array
    end
 
    def show
@@ -54,6 +57,4 @@ class LogsController < ApplicationController
        activities: log.activities
      }
    end
-
-
 end
