@@ -57,6 +57,4 @@ class LogsController < ApplicationController
        activities: log.activities
      }
    end
-
-
 end
